@@ -1,11 +1,15 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import Filters from "./Filters";
 import PetBrowser from "./PetBrowser";
 
 function App() {
   const [pets, setPets] = useState([]);
   const [filters, setFilters] = useState({ type: "all" });
+
+  useEffect(() => {
+    console.log("useEffect is running!");
+    // Fetch pets data or perform other side effects
+  }, []); // Runs only once on mount
 
   return (
     <div className="ui container">
